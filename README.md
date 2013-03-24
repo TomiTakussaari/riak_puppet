@@ -1,4 +1,4 @@
-#Riak puppet rhel
+#Riak puppet module (For rhel/centos)
 
 
 ##Just do
