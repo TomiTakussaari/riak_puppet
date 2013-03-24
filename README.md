@@ -17,3 +17,5 @@ You can test it with:
 
 Or test Riak Control on node riak1 by going with your browser to: https://10.0.3.10:8068 
 and logging in with user/pass (it will whine about invalid certificate)
+
+See /manifests/site.pp on how to use
