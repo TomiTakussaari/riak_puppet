@@ -12,8 +12,9 @@ Vagrant::Config.run do |config|
       config.vm.network :hostonly, "10.0.3.#{10+i}"
       config.vm.customize ["modifyvm", :id, "--memory", 512]
       config.vm.provision :puppet do |puppet|
-        puppet.manifests_path = "."
-        puppet.manifest_file = "./manifests/site.pp"
+        puppet.manifests_path = "./manifests"
+        puppet.manifest_file = "site.pp"
+        puppet.module_path = ["./modules"]
       end
     end
   end
