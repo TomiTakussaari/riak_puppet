@@ -9,7 +9,7 @@ class riak ($join_ip = undef, $listen_ip = $::ipaddress_eth2, $riak_control = fa
     require => Package["riak"],
     ensure => directory,
     owner => "riak",
-    group => "riak",
+    group => "riak"
   }
 
   file { "app.config":
@@ -17,6 +17,12 @@ class riak ($join_ip = undef, $listen_ip = $::ipaddress_eth2, $riak_control = fa
     ensure => present,
     content => template("riak/etc/riak/app.config.erb"),
     require => Package["riak"],
+  }
+
+  file { "/etc/security/limits.d/riak.conf":
+    ensure => present,
+    source => "puppet:///modules/riak/etc/security/limits.d/riak.conf",
+    require => Package["riak"]
   }
 
   file { "vm.args":
