@@ -5,7 +5,7 @@
 
       vagrant up
       
-On project roo, and it should automagically setup Riak cluster with 3 virtual servers:
+On project root, and it should automagically setup Riak cluster with 3 virtual servers:
 
       10.0.3.10 (will have Riak Control installed)
       10.0.3.11
